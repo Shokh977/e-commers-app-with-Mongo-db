@@ -85,7 +85,7 @@ class User {
           user: {
             _id: new ObjectId(this._id),
             name: this.name,
-          },
+          }
         };
         return db.collection("orders").insertOne(order);
       })

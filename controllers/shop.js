@@ -68,52 +68,6 @@ exports.postCart = (req, res, next) => {
       console.log(result);
       res.redirect("/cart");
     });
-  // let fetchedCart;
-  // let newQuantity = 1;
-
-  // req.user
-  //   .getCart()
-  //   .then((cart) => {
-  //     fetchedCart = cart;
-  //     return cart.getProducts({ where: { id: prodId } });
-  //   })
-  //   .then((products) => {
-  //     let product;
-  //     if (products.length > 0) {
-  //       product = products[0];
-  //     }
-
-  //     // Initialize newQuantity to 1, or set it based on existing quantity.
-  //     if (product) {
-  //       // Handle cases where quantity is null
-  //       const oldQuantity = product.cartItem.quantity || 0; // Use 0 if null
-  //       newQuantity = oldQuantity + 1;
-  //       return product;
-  //     }
-
-  //     // If the product does not exist in the cart, fetch it from the database
-  //     return Product.findByPk(prodId);
-  //   })
-  //   .then((product) => {
-  //     if (!product) {
-  //       // Handle error if product is not found
-  //       return res.status(404).send("Product not found");
-  //     }
-
-  //     // Add the product to the cart with the updated quantity
-  //     return fetchedCart.addProduct(product, {
-  //       through: { quantity: newQuantity },
-  //     });
-  //   })
-  //   .then(() => {
-  //     // Redirect after successfully adding/updating the product in the cart
-  //     res.redirect("/cart");
-  //   })
-  //   .catch((error) => {
-  //     // Error handling
-  //     console.error(error);
-  //     res.status(500).send("An error occurred while updating the cart");
-  //   });
 };
 
 exports.postOrders = (req, res, next) => {
